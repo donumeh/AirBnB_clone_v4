@@ -112,6 +112,14 @@
         "documentation": {}
     },
     {
+        "label": "Amenity",
+        "importPath": "models.amenity",
+        "description": "models.amenity",
+        "isExtraImport": true,
+        "detail": "models.amenity",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "kind": 6,
         "isExtraImport": true,
@@ -313,6 +321,14 @@
         "documentation": {}
     },
     {
+        "label": "storage",
+        "importPath": "models",
+        "description": "models",
+        "isExtraImport": true,
+        "detail": "models",
+        "documentation": {}
+    },
+    {
         "label": "app_views",
         "importPath": "api.v1.views",
         "description": "api.v1.views",
@@ -705,6 +721,22 @@
         "documentation": {}
     },
     {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
         "label": "Flask",
         "importPath": "flask",
         "description": "flask",
@@ -1025,11 +1057,11 @@
         "documentation": {}
     },
     {
-        "label": "State",
-        "importPath": "models.state",
-        "description": "models.state",
+        "label": "City",
+        "importPath": "models.city",
+        "description": "models.city",
         "isExtraImport": true,
-        "detail": "models.state",
+        "detail": "models.city",
         "documentation": {}
     },
     {
@@ -1158,6 +1190,30 @@
         "description": "models.state",
         "isExtraImport": true,
         "detail": "models.state",
+        "documentation": {}
+    },
+    {
+        "label": "State",
+        "importPath": "models.state",
+        "description": "models.state",
+        "isExtraImport": true,
+        "detail": "models.state",
+        "documentation": {}
+    },
+    {
+        "label": "State",
+        "importPath": "models.state",
+        "description": "models.state",
+        "isExtraImport": true,
+        "detail": "models.state",
+        "documentation": {}
+    },
+    {
+        "label": "Place",
+        "importPath": "models.place",
+        "description": "models.place",
+        "isExtraImport": true,
+        "detail": "models.place",
         "documentation": {}
     },
     {
@@ -1475,6 +1531,14 @@
     },
     {
         "label": "getenv",
+        "importPath": "os",
+        "description": "os",
+        "isExtraImport": true,
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "environ",
         "importPath": "os",
         "description": "os",
         "isExtraImport": true,
@@ -3202,6 +3266,33 @@
         "description": "web_dynamic.2-hbnb",
         "peekOfCode": "app = Flask(__name__)\n# app.jinja_env.trim_blocks = True\n# app.jinja_env.lstrip_blocks = True\n@app.teardown_appcontext\ndef close_db(error):\n    \"\"\" Remove the current SQLAlchemy Session \"\"\"\n    storage.close()\n@app.route('/2-hbnb', strict_slashes=False)\ndef hbnb():\n    \"\"\" HBNB is alive! \"\"\"",
         "detail": "web_dynamic.2-hbnb",
+        "documentation": {}
+    },
+    {
+        "label": "close_db",
+        "kind": 2,
+        "importPath": "web_dynamic.3-hbnb",
+        "description": "web_dynamic.3-hbnb",
+        "peekOfCode": "def close_db(error):\n    \"\"\" Remove the current SQLAlchemy Session \"\"\"\n    storage.close()\n@app.route('/3-hbnb', strict_slashes=False)\ndef hbnb():\n    \"\"\" HBNB is alive! \"\"\"\n    states = storage.all(State).values()\n    states = sorted(states, key=lambda k: k.name)\n    st_ct = []\n    for state in states:",
+        "detail": "web_dynamic.3-hbnb",
+        "documentation": {}
+    },
+    {
+        "label": "hbnb",
+        "kind": 2,
+        "importPath": "web_dynamic.3-hbnb",
+        "description": "web_dynamic.3-hbnb",
+        "peekOfCode": "def hbnb():\n    \"\"\" HBNB is alive! \"\"\"\n    states = storage.all(State).values()\n    states = sorted(states, key=lambda k: k.name)\n    st_ct = []\n    for state in states:\n        st_ct.append([state, sorted(state.cities, key=lambda k: k.name)])\n    amenities = storage.all(Amenity).values()\n    amenities = sorted(amenities, key=lambda k: k.name)\n    places = storage.all(Place).values()",
+        "detail": "web_dynamic.3-hbnb",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "web_dynamic.3-hbnb",
+        "description": "web_dynamic.3-hbnb",
+        "peekOfCode": "app = Flask(__name__)\n# app.jinja_env.trim_blocks = True\n# app.jinja_env.lstrip_blocks = True\n@app.teardown_appcontext\ndef close_db(error):\n    \"\"\" Remove the current SQLAlchemy Session \"\"\"\n    storage.close()\n@app.route('/3-hbnb', strict_slashes=False)\ndef hbnb():\n    \"\"\" HBNB is alive! \"\"\"",
+        "detail": "web_dynamic.3-hbnb",
         "documentation": {}
     },
     {
