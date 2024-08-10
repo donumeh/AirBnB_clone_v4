@@ -11,7 +11,7 @@ header .logo {
     height: 100%;
 }
 
-header #api_status {
+#api_status {
     position: absolute;
     right: 30px;
     border-radius: 50%;
@@ -22,6 +22,6 @@ header #api_status {
     background-color: #cccccc;
 }
 
-.available {
+#api_status.available {
     background-color: #ff545f;
 }
